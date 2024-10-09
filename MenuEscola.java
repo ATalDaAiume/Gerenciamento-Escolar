@@ -7,12 +7,12 @@ public class MenuEscola {
         int opt = 0;
 
         do {
-            System.out.println("1 - Cadastrar Categoria");
-            System.out.println("2 - Cadastrar Tutor");
-            System.out.println("3 - Cadastrar Animal");
-            System.out.println("4 - Listar Categorias");
-            System.out.println("5 - Listar Tutores");
-            System.out.println("6 - Listar Animais");
+            System.out.println("1 - Cadastrar Professor");
+            System.out.println("2 - Cadastrar Curso");
+            System.out.println("3 - Cadastrar Aluno");
+            System.out.println("4 - Listar Professores");
+            System.out.println("5 - Listar Cursos");
+            System.out.println("6 - Listar Alunos");
             System.out.println("7 - Sair");
             
             try {
