@@ -1,7 +1,14 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class MenuEscola {
     public static void main(String[] args) {
+        final String url = "jdbc:mysql://localhost:3306/provinhanadalegal";
+        final String user = "root";
+        final String password = "";
         System.out.println("Menu Escola");
         Scanner scanner = new Scanner(System.in);  // Criando um Scanner para entrada de dados
         int opt = 0;  // Variável que guarda a opção selecionada pelo usuário
@@ -35,10 +42,20 @@ public class MenuEscola {
                         String nome = scanner.next();
                         System.out.println("Digite o Departamento do Professor: ");
                         String departamento = scanner.next();
+
+                        Connection con = DriverManager.getConnection(url, user, password);
+                        Statement stm = con.createStatement();
+                        boolean sql = stm.execute("INSERT INTO professores "
+                            + "(idProfessor, nome, departamento) VALUES "
+                            + "('"+idProfessor+"', '"+nome+"', '"+departamento+"')");
+                        if(!sql) {
+                            System.out.println("Erro ao cadastrar o Professor");
+                        }
+                        con.close();
                         // Criação de um novo objeto Professor
-                        new Professor(idProfessor, nome, departamento);
+                        //new Professor(idProfessor, nome, departamento);
                     } catch (Exception e) {
-                        System.out.println("Erro ao cadastrar o Professor");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 2:
@@ -53,10 +70,20 @@ public class MenuEscola {
                         int horas = scanner.nextInt();
                         System.out.println("Digite o Id do Professor do Curso: ");
                         int idProfessor = scanner.nextInt();
+
+                        Connection con = DriverManager.getConnection(url, user, password);
+                        Statement stm = con.createStatement();
+                        boolean sql = stm.execute("INSERT INTO cursos "
+                            + "(idCurso, nome, horas, idProfessor) VALUES "
+                            + "('"+idCurso+"', '"+nome+"', '"+horas+"' '"+idProfessor+"')");
+                        if(!sql) {
+                            System.out.println("Erro ao cadastrar o Curso");
+                        }
+                        con.close();
                         // Criação de um novo objeto Curso
                         new Curso(idCurso, nome, horas, idProfessor);
-                    } catch (Exception e) {
-                        System.out.println("Erro ao cadastrar o Curso");
+                    } catch (SQLException e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 3:
