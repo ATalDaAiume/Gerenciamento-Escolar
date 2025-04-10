@@ -1,6 +1,7 @@
 ![Atividade Avaliativa III](https://img.shields.io/badge/atividade%20avaliativa-java-blueviolet)
 
 # 🎓 Sistema de Gerenciamento Escolar - Java
+> Atividade Avaliativa III – Programação Orientada a Objetos | 2º Semestre ADS
 
 Repositório referente à **Atividade Avaliativa III** da disciplina de **Programação Orientada a Objetos**. O objetivo é desenvolver um mini sistema de gerenciamento escolar que consolide os conceitos de POO.
 
