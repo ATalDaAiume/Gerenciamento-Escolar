@@ -1,4 +1,4 @@
-![Atividade Avaliativa III](https://img.shields.io/badge/atividade%20avaliativa-java-yellow)
+![Atividade Avaliativa III](https://img.shields.io/badge/atividade%20avaliativa-java-orange)
 
 # 🎓 Sistema de Gerenciamento Escolar - Java
 > Atividade Avaliativa III – Programação Orientada a Objetos | 2º Semestre ADS
